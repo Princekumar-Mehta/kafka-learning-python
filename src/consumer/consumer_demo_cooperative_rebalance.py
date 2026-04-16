@@ -16,7 +16,8 @@ logger.info("I am a Kafka Consumer!")
 config = {
     'bootstrap.servers': 'localhost:9092',
     'group.id': 'my-python-consumer-group',
-    'auto.offset.reset': 'earliest'
+    'auto.offset.reset': 'earliest',
+    'partition.assignment.strategy':'cooperative-sticky'
 }
 
 # 2. Create the Consumer

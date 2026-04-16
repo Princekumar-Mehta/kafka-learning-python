@@ -39,14 +39,8 @@ signal.signal(signal.SIGTERM, shutdown)
 signal.signal(signal.SIGINT, shutdown)
 
 # 4. Consume data
-def on_assign(consumer, partitions):
-    logger.info(f"Partitions assigned: {[p.partition for p in partitions]}")
-
-def on_revoke(consumer, partitions):
-    logger.info(f"Partitions revoked: {[p.partition for p in partitions]}")
-
 try:
-    consumer.subscribe(['demo_python'], on_assign=on_assign, on_revoke=on_revoke)
+    consumer.subscribe(['demo_python'])
     logger.info("Subscribed to topic, polling for messages...")
 
     while running:
