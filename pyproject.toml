@@ -7,4 +7,6 @@ requires-python = ">=3.14"
 dependencies = [
     "confluent-kafka>=2.11.1",
     "quixstreams>=3.23.6",
+    "requests>=2.33.1",
+    "sseclient-py>=1.9.0",
 ]
